@@ -8,3 +8,4 @@ services:
       - ./my_site:/var/www/html/my_site
     ports:
       - 8080:80
+    restart: always
