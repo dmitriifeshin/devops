@@ -1,5 +1,4 @@
-### docker-compose.yml
-version: '3.9'
+version: "3"
 
 services:
   db:
@@ -16,12 +15,11 @@ services:
 
   app:
     build: .
+    image: task_manager-app
     depends_on:
       - db
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-taskdb}
-    volumes:
-      - .:/app
     stdin_open: true
     tty: true
 
