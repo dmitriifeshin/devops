@@ -1,4 +1,3 @@
-### task_manager/app.py
 
 from datetime import datetime
 from sqlalchemy.orm import Session
