@@ -1,0 +1,2 @@
+FROM system-image:latest
+RUN go mod download && go build -o digitalclock .
