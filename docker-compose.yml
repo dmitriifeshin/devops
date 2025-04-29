@@ -2,7 +2,7 @@ version: "3"
 
 services:
   digitalclock:
-    build: 
+    build:
       context: .
     image: digitalclock
     environment:
@@ -10,3 +10,4 @@ services:
       TZ: ${TZ}
     ports:
       - "${PORT}:${PORT}"
+    restart: always
