@@ -15,6 +15,7 @@ services:
       - system
   
   runner:
+    image: run-image
     build:
       context: .
       dockerfile: Dockerfile.run
@@ -25,3 +26,4 @@ services:
       TZ: ${TZ}
     ports:
       - "${PORT}:${PORT}"
+    restart: always

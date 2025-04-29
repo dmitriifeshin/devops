@@ -1,6 +1,10 @@
-FROM build-image:latest
+FROM alpine:3.21.3
+
+WORKDIR /src
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
+
+COPY --from=build-image /src/digitalclock digitalclock
 
 ENTRYPOINT ["/src/digitalclock"]
