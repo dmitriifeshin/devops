@@ -40,7 +40,7 @@ services:
       retries: 10
 
   nginx-proxy:
-    image: nginx:alpine
+    image: nginx:1.27.5-alpine
     ports:
       - "80:80" 
     volumes:
