@@ -15,14 +15,9 @@ services:
   backend:
     build:
       context: ./spring-backend
-    # env_file:
-    #   - .env
+    env_file:
+      - .env
     environment:
-      - MYSQL_DATABASE=hobbie_db
-      - MYSQL_PORT=3306
-      - MYSQL_USER=test
-      - MYSQL_PASSWORD=test
-      - MYSQL_ROOT_PASSWORD=root
       - DB_HOST=db
     networks:
       - app-net
@@ -41,7 +36,7 @@ services:
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
       interval: 10s
-      timeout: 2s
+      timeout: 3s
       retries: 10
 
   nginx-proxy:

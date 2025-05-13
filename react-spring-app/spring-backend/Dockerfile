@@ -11,6 +11,6 @@ COPY --from=builder /app/target/*.jar app.jar
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 RUN chown -R appuser:appgroup /app
-# USER appuser
+USER appuser
 
-ENTRYPOINT ["sh", "-c", "sleep 20 && java -jar app.jar"]
+ENTRYPOINT ["java -jar app.jar"]
