@@ -13,4 +13,4 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 RUN chown -R appuser:appgroup /app
 USER appuser
 
-ENTRYPOINT ["java -jar app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
